@@ -153,8 +153,7 @@ body {
 
   .mouse {
     margin-left: 4rem;
-    width: 6rem;
-    height: auto;
+
     // filter: hue-rotate(200) saturate(5) brightness(0.8);
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -163,6 +162,15 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    svg {
+      cursor: pointer;
+      stroke: $color-grey-dark-1;
+      fill: $color-grey-dark-2;
+      filter: hue-rotate(200) saturate(5) brightness(0.8);
+      width: 6rem;
+      height: auto;
+    }
 
     @media only screen and (max-width: $bp-medium) {
       width: 6rem;
