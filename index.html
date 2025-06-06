@@ -15,7 +15,7 @@
       type="image/x-icon"
     />
 
-    <link rel="stylesheet" href="src/sass/main.scss" />
+    <link defer rel="stylesheet" href="src/sass/main.scss" />
     <script type="module" src="src/js/clock.js"></script>
 
     <title>Digital Clock</title>
@@ -23,9 +23,7 @@
   <body>
     <div class="container">
       <div class="inner-container">
-        <div class="display">
-          <div class="time" style="font-family: 'Orbitron', sans-serif;">12:04PM</div>
-        </div>
+        <div id="time" style="font-family: 'Orbitron', sans-serif;">12:04</div>
       </div>
       <div class="foot1"></div>
       <div class="foot2"></div>

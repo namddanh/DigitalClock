@@ -1,8 +1,9 @@
 $color-primary-bg: #f38e82;
 $color-secondary-bg: #a36201;
-$color-grad-1: #8fd698;
+$color-grad-1: #a5cb7d;
 $color-grad-2: #456940;
 $color-grad-3: #82bb7a;
+$color-grad-4: #9dbd7b;
 
 $color-grey-light-1: #f9f5f3; // Light background
 $color-grey-light-2: #f2efee; // Light lines
@@ -42,7 +43,9 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  display: flex; // Centering div vertically
+  justify-content: center; // Centering div vertically
+  align-items: center; // Centering div vertically
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-1;
@@ -61,19 +64,17 @@ body {
 }
 
 .inner-container {
+  position: relative;
   max-width: 80rem;
   min-height: 20rem;
   margin: 4vw auto;
-  background-color: $color-grad-3;
-  border-radius: 9px;
+  background-color: $color-grad-1;
+  border-radius: 20px;
   outline: 20px solid $color-grey-dark-1;
   outline-offset: -5px;
   overflow: hidden;
-  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
-
-  display: grid;
-  grid-template-rows: 10rem auto;
-  grid-template-columns: 1fr 2fr;
+  box-shadow: inset 50px 30px 0px rgba($color-grey-dark-2, 0.5),
+    0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
 
   @media only screen and (max-width: $bp-large) {
     max-width: 100%;
@@ -85,8 +86,8 @@ body {
 .foot1,
 .foot2 {
   position: absolute;
-  bottom: -50px;
-  width: 50px;
+  bottom: 25px;
+  width: 100px;
   height: 50px;
   border-radius: 9px;
   background-color: $color-grey-dark-1;
@@ -101,6 +102,8 @@ body {
   right: 30%;
 }
 
-.time {
-  font-size: 15rem;
+#time {
+  margin-left: 15rem;
+  font-size: 12rem;
+  color: $color-grad-2;
 }
