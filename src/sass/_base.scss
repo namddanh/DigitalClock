@@ -37,8 +37,20 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
+  @media only screen and (max-width: $bp-large) {
+    font-size: 56.25%; // ~9px
+  }
+
   @media only screen and (max-width: $bp-medium) {
-    font-size: 50%;
+    font-size: 50%; // ~8px
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 43.75%; // ~7px
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 37.5%; // ~6px
   }
 }
 
@@ -56,26 +68,22 @@ body {
   overflow: hidden;
 }
 
-.container {
-  position: relative;
-  height: 100%;
+.main-container {
+  height: auto;
   width: 75vw;
+  max-width: 1000px;
   margin: auto;
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 90vw;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 95vw;
+  }
 }
 
-#toggle-format {
-  cursor: pointer;
-  border-radius: 9px;
-  width: 100px;
-  height: 35px;
-  position: absolute;
-  top: 30px;
-  left: 40%;
-  background-color: $color-grey-dark-1;
-  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
-}
-
-.inner-container {
+.clock-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -83,27 +91,89 @@ body {
   max-width: 80rem;
   min-height: 20rem;
   margin: 4vw auto;
+  padding: 2rem;
   background-color: $color-grad-1;
   border-radius: 20px;
   outline: 20px solid $color-grey-dark-1;
   outline-offset: -5px;
-  overflow: hidden;
   box-shadow: inset 50px 30px 0px rgba($color-grey-dark-2, 0.5),
     0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
 
-  #time {
-    font-size: 12rem;
-    color: $color-grad-2;
+  @media only screen and (max-width: $bp-large) {
+    border-radius: 20px;
   }
 
-  .hacker-cat {
-    font-size: 12rem;
-    color: $color-grad-2;
+  @media only screen and (max-width: $bp-medium) {
+    border-radius: 20px;
+  }
 
-    img {
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 37.5%; // ~6px
+  }
+
+  .foot1,
+  .foot2 {
+    position: absolute;
+    bottom: -45px;
+    width: 100px;
+    height: 50px;
+    border-radius: 9px;
+    background-color: $color-grey-dark-1;
+    box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 80px;
+      height: 40px;
+      bottom: -40px;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 60px;
+      height: 30px;
+      bottom: -40px;
+    }
+  }
+
+  .foot1 {
+    left: 30%;
+  }
+
+  .foot2 {
+    right: 30%;
+  }
+
+  .mouse {
+    margin-left: 4rem;
+    width: 6rem;
+    height: auto;
+    // filter: hue-rotate(200) saturate(5) brightness(0.8);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 6rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
       width: 5rem;
-      height: auto;
-      filter: hue-rotate(180) saturate(5);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 6rem;
     }
 
     &.hidden {
@@ -111,28 +181,78 @@ body {
     }
   }
 
-  @media only screen and (max-width: $bp-large) {
-    max-width: 100%;
-    margin: 0;
-    border-radius: 0;
+  #toggle-format {
+    cursor: pointer;
+    border-radius: 9px;
+    padding-top: 5px;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    top: -40px;
+    left: 40%;
+    text-align: center;
+    background-color: $color-grey-dark-1;
+    box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 80px;
+      height: 30px;
+      left: 35%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 70px;
+      height: 25px;
+      top: -30px;
+      left: 30%;
+    }
+
+    &:focus,
+    &:active {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      transform: translateY(2px);
+    }
+
+    .toggle-format-text {
+      font-size: 1.5rem;
+      color: $color-grey-light-3;
+    }
   }
-}
 
-.foot1,
-.foot2 {
-  position: absolute;
-  bottom: 25px;
-  width: 100px;
-  height: 50px;
-  border-radius: 9px;
-  background-color: $color-grey-dark-1;
-  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
-}
+  #time {
+    font-size: 12rem;
+    color: $color-grad-2;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-.foot1 {
-  left: 30%;
-}
+    @media only screen and (max-width: $bp-large) {
+      font-size: 20rem;
+    }
 
-.foot2 {
-  right: 30%;
+    @media only screen and (max-width: $bp-medium) {
+      margin-top: 15px;
+      font-size: 17rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 15px;
+      font-size: 14rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin-top: 15px;
+      font-size: 13rem;
+    }
+  }
 }
