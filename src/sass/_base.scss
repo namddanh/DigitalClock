@@ -63,8 +63,23 @@ body {
   margin: auto;
 }
 
+#toggle-format {
+  cursor: pointer;
+  border-radius: 9px;
+  width: 100px;
+  height: 35px;
+  position: absolute;
+  top: 30px;
+  left: 40%;
+  background-color: $color-grey-dark-1;
+  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
+}
+
 .inner-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 80rem;
   min-height: 20rem;
   margin: 4vw auto;
@@ -75,6 +90,26 @@ body {
   overflow: hidden;
   box-shadow: inset 50px 30px 0px rgba($color-grey-dark-2, 0.5),
     0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.6);
+
+  #time {
+    font-size: 12rem;
+    color: $color-grad-2;
+  }
+
+  .hacker-cat {
+    font-size: 12rem;
+    color: $color-grad-2;
+
+    img {
+      width: 5rem;
+      height: auto;
+      filter: hue-rotate(180) saturate(5);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
 
   @media only screen and (max-width: $bp-large) {
     max-width: 100%;
@@ -100,10 +135,4 @@ body {
 
 .foot2 {
   right: 30%;
-}
-
-#time {
-  margin-left: 15rem;
-  font-size: 12rem;
-  color: $color-grad-2;
 }
