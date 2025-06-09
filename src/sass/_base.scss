@@ -33,6 +33,11 @@ $bp-smallest: 31.25em; // 500px
   box-sizing: inherit;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -55,6 +60,7 @@ html {
 }
 
 body {
+  display: -webkit-flex;
   display: flex; // Centering div vertically
   justify-content: center; // Centering div vertically
   align-items: center; // Centering div vertically
@@ -77,15 +83,12 @@ body {
   @media only screen and (max-width: $bp-medium) {
     width: 90vw;
   }
-
-  @media only screen and (max-width: $bp-small) {
-    width: 95vw;
-  }
 }
 
 .clock-container {
   position: relative;
-  display: flex;
+  display: -webkit-flex;
+  display: flex; // Centering div vertically
   align-items: center;
   justify-content: center;
   max-width: 80rem;

@@ -117,13 +117,6 @@ $tail-interval: (11 - 7.5) / $tail-wags;
 @include effect('left-ear', $k-left-ear);
 @include effect('right-ear', $k-right-ear);
 
-body {
-  // background-color: $teal;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // height: 100vh;
-}
 .cat-container {
   cursor: pointer;
   position: absolute;
